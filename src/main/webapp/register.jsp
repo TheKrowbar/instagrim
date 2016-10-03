@@ -28,8 +28,8 @@
             <form method="POST"  action="Register">
                 <ul>
                     <%-- enter new username and password --%>
-                    <li>User Name <input type="text" name="username"></li>
-                    <li>Password <input type="password" name="password"></li>
+                    <li>User Name <input type="text" name="username" required></li> <%-- "required" so user can't just hit register without filling in --%>
+                    <li>Password <input type="password" name="password" required></li>
                 </ul>
                 <br/>
                 <input type="submit" value="Register"> <%-- haha! I fixed your spelling error! Although if u/name or p/word are empty we get server errors --%>

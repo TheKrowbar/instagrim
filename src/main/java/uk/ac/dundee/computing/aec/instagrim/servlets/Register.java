@@ -30,10 +30,7 @@ public class Register extends HttpServlet {
         // TODO Auto-generated method stub
         cluster = CassandraHosts.getCluster();
     }
-
-
-
-
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -52,8 +49,7 @@ public class Register extends HttpServlet {
         us.setCluster(cluster);
         us.RegisterUser(username, password);
         
-	response.sendRedirect("/Instagrim");
-        
+	response.sendRedirect("/Instagrim"); 
     }
 
     /**
@@ -65,5 +61,4 @@ public class Register extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
