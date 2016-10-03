@@ -8,14 +8,13 @@ and open the template in the editor.
     Author     : Administrator
 */
 
-
 body {
-    background-color: aliceblue;
+    background-color: aliceblue; /* white is boring */
 }
 
 header {
     text-align: center;
-    font-family: "Helvetica";
+    font-family: "Helvetica"; /* if it's good enough for Instagram it's good enough for me */
     font-size: 12pt;
 }
 nav {

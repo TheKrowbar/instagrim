@@ -26,13 +26,13 @@
             <ul>
                 <li><a href="upload.jsp">Upload</a></li>
                     <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
-                        if (lg != null) {
-                            String UserName = lg.getUsername();
-                            if (lg.getlogedin()) { %>
-                                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li> <%}
+                        if (lg != null) { //they are logged in
+                            String UserName = lg.getUsername(); //get their username
+                            if (lg.getloggedin()) { %>
+                                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li> <%} //navigate to users uploads
                         }else{ %>
-                            <li><a href="register.jsp">Register</a></li>
-                            <li><a href="login.jsp">Login</a></li> <%        
+                            <li><a href="register.jsp">Register</a></li> <%-- navigate to register page --%>
+                            <li><a href="login.jsp">Login</a></li> <% //navigate to login page        
                         }%>
             </ul>
         </nav>
@@ -40,8 +40,8 @@
         <%-- links to home --%>
         <footer>
             <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
-                <li>&COPY; Kerr M</li>
+                <li class="footer"><a href="/Instagrim">Home</a></li> <%-- navigate to index page --%>
+                <li>&COPY; Kerr Macpherson</li>
             </ul>
         </footer>
     </body>
