@@ -9,8 +9,17 @@ and open the template in the editor.
 */
 
 
+body {
+    background-color: aliceblue;
+}
+
+header {
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 12pt;
+}
 nav {
     text-align: left;
-    border: 2px;
+    border: 10px;
     float: right;
 }
