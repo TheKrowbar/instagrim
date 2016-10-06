@@ -32,7 +32,7 @@
                     <li>Password <input type="password" name="password" required></li>
                 </ul>
                 <br/>
-                <input type="submit" value="Register"> <%-- haha! I fixed your spelling error! Although if u/name or p/word are empty we get server errors --%>
+                <input type="submit" value="Register">
             </form>
 
         </article>

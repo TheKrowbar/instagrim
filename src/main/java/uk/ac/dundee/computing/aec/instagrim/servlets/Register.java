@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import uk.ac.dundee.computing.aec.instagrim.lib.CassandraHosts;
 import uk.ac.dundee.computing.aec.instagrim.models.User;
+import uk.ac.dundee.computing.aec.instagrim.stores.LoggedIn;
 
 /**
  *
@@ -46,9 +47,9 @@ public class Register extends HttpServlet {
         String password=request.getParameter("password");
         
         User us=new User();
-        us.setCluster(cluster);
-        us.RegisterUser(username, password);
-        
+        us.setCluster(cluster); //connect to database
+        us.RegisterUser(username, password); //register new user
+
 	response.sendRedirect("/Instagrim"); 
     }
 

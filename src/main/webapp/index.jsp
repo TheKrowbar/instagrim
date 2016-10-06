@@ -31,8 +31,8 @@
                             if (lg.getloggedin()) { %>
                                 <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li> <%} //navigate to users uploads
                         }else{ %>
-                            <li><a href="register.jsp">Register</a></li> <%-- navigate to register page --%>
-                            <li><a href="login.jsp">Login</a></li> <% //navigate to login page        
+                            <li><a href="register.jsp">Register</a></li> <%-- link to register page --%>
+                            <li><a href="login.jsp">Login</a></li> <% //link to login page        
                         }%>
             </ul>
         </nav>
