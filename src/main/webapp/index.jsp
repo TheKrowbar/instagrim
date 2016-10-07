@@ -30,11 +30,8 @@
                             String UserName = lg.getUsername(); //get their username
                             if (lg.getloggedin()) { %>
                                 <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li> <%} //navigate to users uploads
-
-                                //allow user to logout if they are logged in
-                                %> <form method="POST"  action="Logout">
-                                   <input type="submit" value="Logout"> </form> <%
-                                       
+                                %> <form method="POST"  action="Logout"> <%-- logs user out --%>
+                                <input type="submit" value="Logout"> </form> <%
                         }else{ %>
                             <li><a href="register.jsp">Register</a></li> <%-- link to register page --%>
                             <li><a href="login.jsp">Login</a></li> <% //link to login page        
