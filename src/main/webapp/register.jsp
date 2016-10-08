@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Instagrim</title>
+        <title>Sign up for Instagrim!</title>
         <link rel="stylesheet" type="text/css" href="Styles.css" /> <%-- link to css --%>
     </head>
     <body>
