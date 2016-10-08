@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import uk.ac.dundee.computing.aec.instagrim.lib.CassandraHosts;
 import uk.ac.dundee.computing.aec.instagrim.models.User;
 import uk.ac.dundee.computing.aec.instagrim.stores.LoggedIn;
@@ -49,7 +50,26 @@ public class Register extends HttpServlet {
         User us=new User();
         us.setCluster(cluster); //connect to database
         us.RegisterUser(username, password); //register new user
-
+        
+        HttpSession session=request.getSession();
+        System.out.println("Session in servlet "+session);
+        
+        //The following logs in the new user that has just been registered
+        if(us.RegisterUser(username, password)){ //if user has been registered
+            //log user in immediately after registering
+            LoggedIn lg= new LoggedIn();
+            lg.setLoggedin();
+            lg.setUsername(username);
+            //request.setAttribute("LoggedIn", lg);
+            
+            session.setAttribute("LoggedIn", lg);
+            System.out.println("Session in servlet "+session);
+            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+	    rd.forward(request,response);
+        }else{
+            response.sendRedirect("/Instagrim/register.jsp");
+        }
+        
 	response.sendRedirect("/Instagrim"); 
     }
 

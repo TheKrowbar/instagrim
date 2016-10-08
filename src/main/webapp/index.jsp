@@ -24,10 +24,11 @@
         <%-- if user is logged in, take them to their uploads --%>
         <nav>
             <ul>
-                    <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn"); //FIX UPLOAD COMING UP BEFORE THEYVE LOGGED IN BRO
+                    <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
                         if (lg != null) { //they are logged in
                             String UserName = lg.getUsername(); //get their username
                             if (lg.getloggedin()) { %>
+                                <li><a href="profile.jsp">My Profile</a></li>
                                 <li><a href="upload.jsp">Upload</a></li>
                                 <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li> <%} //navigate to users uploads
                                 %> <form method="POST"  action="Logout"> <%-- logs user out --%>

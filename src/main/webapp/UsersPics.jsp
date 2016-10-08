@@ -17,8 +17,7 @@
     <body>
         <header>
         
-        <h1>InstaGrim</h1>
-        <h2>Your world in Black and White</h2>
+        <h1>Your Pictures</h1>
         </header>
         
         <nav>
