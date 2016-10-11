@@ -56,6 +56,7 @@ public class Login extends HttpServlet {
         boolean isValid=us.IsValidUser(username, password);
         HttpSession session=request.getSession();
         System.out.println("Session in servlet "+session);
+        
         if (isValid){
             LoggedIn lg= new LoggedIn();
             lg.setLoggedin();
@@ -64,7 +65,11 @@ public class Login extends HttpServlet {
             
             session.setAttribute("LoggedIn", lg);
             System.out.println("Session in servlet "+session);
-            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+            
+            LoggedIn lgpath = (LoggedIn) session.getAttribute("LoggedIn");
+            String url_username = lgpath.getUsername();
+            
+            RequestDispatcher rd=request.getRequestDispatcher("/Images/"+url_username); //send user to profile after login
 	    rd.forward(request,response);
             
         }else{
