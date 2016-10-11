@@ -28,9 +28,8 @@
                         if (lg != null) { //they are logged in
                             String UserName = lg.getUsername(); //get their username
                             if (lg.getloggedin()) { %>
-                                <li><a href="profile.jsp">My Profile</a></li>
-                                <li><a href="upload.jsp">Upload</a></li>
-                                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li> <%} //navigate to users uploads
+                                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">My Profile</a></li> <%-- user's profile page --%>
+                                <li><a href="upload.jsp">Upload</a></li> <%}
                                 %> <form method="POST"  action="Logout"> <%-- logs user out --%>
                                 <input type="submit" value="Logout"> </form> <%
                         }else{ %>
