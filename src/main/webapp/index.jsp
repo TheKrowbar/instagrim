@@ -26,9 +26,10 @@
             <ul>
                     <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
                         if (lg != null) { //they are logged in
-                            String Username = lg.getUsername(); //get their username
-                            if (lg.getloggedin()) { %>
-                                <li><a href="/Instagrim/Images/<%=Username%>">My Profile</a></li> <%-- user's profile page --%>
+                            String url_username = (String)request.getAttribute("uname"); //get their username
+                            if (lg.getloggedin()) { 
+                            response.sendRedirect(request.getContextPath() + "/Images/" + url_username);%> <%-- go to user's profile DOESNT LOAD IMAGES --%>
+                                <li><a href="/Instagrim/Images/<%=url_username%>">My Profile</a></li> <%-- user's profile page --%>
                                 <li><a href="upload.jsp">Upload</a></li> <%}
                                 %> <form method="POST"  action="Logout"> <%-- logs user out --%>
                                 <input type="submit" value="Logout"> </form> <%
