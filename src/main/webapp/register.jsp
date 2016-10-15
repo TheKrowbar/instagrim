@@ -1,4 +1,4 @@
-<%-- 
+                         <%-- 
     Document   : register.jsp
     Created on : Sep 28, 2014, 6:29:51 PM
     Author     : Administrator
