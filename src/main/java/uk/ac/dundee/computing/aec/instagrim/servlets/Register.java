@@ -54,6 +54,7 @@ public class Register extends HttpServlet {
         HttpSession session=request.getSession();
         System.out.println("Session in servlet "+session);
         
+        /*
         //The following logs in the new user that has just been registered
         if(us.RegisterUser(username, password)){ //if user has been registered
             //log user in immediately after registering
@@ -69,6 +70,7 @@ public class Register extends HttpServlet {
         }else{
             response.sendRedirect("/Instagrim/register.jsp");
         }
+        */
         
 	response.sendRedirect("/Instagrim"); 
     }
