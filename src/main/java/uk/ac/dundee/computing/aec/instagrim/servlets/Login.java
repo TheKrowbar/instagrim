@@ -49,6 +49,7 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         
         String username=request.getParameter("username");
+        username = username.toLowerCase();
         String password=request.getParameter("password");
         
         User us=new User();
