@@ -50,34 +50,30 @@ public class Register extends HttpServlet {
         
         User us=new User();
         us.setCluster(cluster); //connect to database
-        if (!(us.RegisterUser(username, password))){ //this stops duplicates
-            us.RegisterUser(username, password); //register new user
+        us.RegisterUser(username, password); //register new user
 
-            HttpSession session=request.getSession();
+        HttpSession session=request.getSession();
+        System.out.println("Session in servlet "+session);
+
+        /*
+        //The following logs in the new user that has just been registered
+        if(us.RegisterUser(username, password)){ //if user has been registered
+            //log user in immediately after registering
+            LoggedIn lg= new LoggedIn();
+            lg.setLoggedin();
+            lg.setUsername(username);
+            //request.setAttribute("LoggedIn", lg);
+
+            session.setAttribute("LoggedIn", lg);
             System.out.println("Session in servlet "+session);
-
-            /*
-            //The following logs in the new user that has just been registered
-            if(us.RegisterUser(username, password)){ //if user has been registered
-                //log user in immediately after registering
-                LoggedIn lg= new LoggedIn();
-                lg.setLoggedin();
-                lg.setUsername(username);
-                //request.setAttribute("LoggedIn", lg);
-
-                session.setAttribute("LoggedIn", lg);
-                System.out.println("Session in servlet "+session);
-                RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
-                rd.forward(request,response);
-            }else{
-                response.sendRedirect("/Instagrim/register.jsp");
-            }
-            */
-
-            response.sendRedirect("/Instagrim"); 
-        }else {
-            //error message
+            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+            rd.forward(request,response);
+        }else{
+            response.sendRedirect("/Instagrim/register.jsp");
         }
+        */
+
+        response.sendRedirect("/Instagrim");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
