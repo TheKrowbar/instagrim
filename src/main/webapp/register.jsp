@@ -17,12 +17,6 @@
         <h1>InstaGrim!</h1>
         <h2>Your world in Black and White</h2>
         </header>
-        <nav>
-            <ul>
-                <li><a href="/Instagrim/Images/majed">Sample Images</a></li>
-            </ul>
-        </nav>
-       
         <article>
             <h3>Sign up for Instagrim! You know you want to</h3>
             <form method="POST"  action="Register">

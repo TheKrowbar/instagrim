@@ -8,7 +8,7 @@
 
 <%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="uk.ac.dundee.computing.aec.instagrim.stores.*" %>
+<%@ page import="uk.ac.dundee.computing.kym.instagrim.stores.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,9 +26,8 @@
         
         <nav>
             <ul>
-                <li class="nav"><a href="/Instagrim/upload.jsp">Upload</a></li>
+                <li class="nav"><a href="/Instagrim/Upload">Upload</a></li>
                 <li class="nav"><a href="/Instagrim/logout.jsp">Logout</a></li>
-                <li class="nav"><a href="/Instagrim/Images/majed">Sample Images</a></li>
             </ul>
         </nav>
  
