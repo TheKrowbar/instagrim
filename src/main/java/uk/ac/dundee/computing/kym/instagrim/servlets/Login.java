@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package uk.ac.dundee.computing.aec.instagrim.servlets;
+package uk.ac.dundee.computing.kym.instagrim.servlets;
 
 import com.datastax.driver.core.Cluster;
 import java.io.IOException;
@@ -17,22 +17,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import uk.ac.dundee.computing.aec.instagrim.lib.CassandraHosts;
-import uk.ac.dundee.computing.aec.instagrim.models.User;
-import uk.ac.dundee.computing.aec.instagrim.stores.LoggedIn;
+import uk.ac.dundee.computing.kym.instagrim.lib.CassandraHosts;
+import uk.ac.dundee.computing.kym.instagrim.models.User;
+import uk.ac.dundee.computing.kym.instagrim.stores.LoggedIn;
 
 /**
  *
  * @author Administrator
  */
-@WebServlet(name = "Register", urlPatterns = {"/Register"})
-public class Register extends HttpServlet {
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
+public class Login extends HttpServlet {
+
     Cluster cluster=null;
+
+
     public void init(ServletConfig config) throws ServletException {
         // TODO Auto-generated method stub
         cluster = CassandraHosts.getCluster();
     }
-    
+
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -44,40 +47,41 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String username=request.getParameter("username");
         username = username.toLowerCase();
         String password=request.getParameter("password");
         
         User us=new User();
-        us.setCluster(cluster); //connect to database
-        us.RegisterUser(username, password); //register new user
-
+        us.setCluster(cluster);
+        boolean isValid=us.IsValidUser(username, password);
         HttpSession session=request.getSession();
         System.out.println("Session in servlet "+session);
-
-        /*
-        //The following logs in the new user that has just been registered
-        if(us.RegisterUser(username, password)){ //if user has been registered
-            //log user in immediately after registering
+        
+        if (isValid){
             LoggedIn lg= new LoggedIn();
             lg.setLoggedin();
             lg.setUsername(username);
             //request.setAttribute("LoggedIn", lg);
-
+            
             session.setAttribute("LoggedIn", lg);
             System.out.println("Session in servlet "+session);
-            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
-            rd.forward(request,response);
+            
+            LoggedIn lgpath = (LoggedIn) session.getAttribute("LoggedIn");
+            String url_username = lgpath.getUsername();
+            
+            RequestDispatcher rd=request.getRequestDispatcher("index.jsp"); //send user to profile after login (NOT YET)
+            request.setAttribute("uname", url_username); //for sending user to profile after login
+	    rd.forward(request,response);
+            
         }else{
-            response.sendRedirect("/Instagrim/register.jsp");
+            response.sendRedirect("/Instagrim/login.jsp");
         }
-        */
-
-        response.sendRedirect("/Instagrim");
+        
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         RequestDispatcher rd=request.getRequestDispatcher("register.jsp");
+         RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
          rd.forward(request,response);
     }
     
@@ -90,4 +94,5 @@ public class Register extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }

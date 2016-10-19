@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package uk.ac.dundee.computing.aec.instagrim.models;
+package uk.ac.dundee.computing.kym.instagrim.models;
 
 import com.datastax.driver.core.BoundStatement;
 import com.datastax.driver.core.Cluster;
@@ -19,10 +19,10 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import uk.ac.dundee.computing.aec.instagrim.lib.AeSimpleSHA1;
-import uk.ac.dundee.computing.aec.instagrim.servlets.Login;
-import uk.ac.dundee.computing.aec.instagrim.stores.LoggedIn;
-import uk.ac.dundee.computing.aec.instagrim.stores.Pic;
+import uk.ac.dundee.computing.kym.instagrim.lib.AeSimpleSHA1;
+import uk.ac.dundee.computing.kym.instagrim.servlets.Login;
+import uk.ac.dundee.computing.kym.instagrim.stores.LoggedIn;
+import uk.ac.dundee.computing.kym.instagrim.stores.Pic;
 
 /**
  *
