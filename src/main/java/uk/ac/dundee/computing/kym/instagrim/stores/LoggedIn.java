@@ -29,6 +29,7 @@ public class LoggedIn {
     
     public String setfirstName(String f_name){
         this.firstName=f_name;
+        return firstName;
     }
     public String getfirstName(){
         return firstName;
@@ -36,6 +37,7 @@ public class LoggedIn {
     
     public String setlastName(String l_name){
         this.lastName=l_name;
+        return lastName;
     }
     public String getlastName(){
         return lastName;
@@ -43,6 +45,7 @@ public class LoggedIn {
     
     public String setEmail(String email_address){
         this.email=email_address;
+        return email;
     }
     public String getEmail(){
         return email;
