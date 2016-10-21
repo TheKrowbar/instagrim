@@ -28,7 +28,7 @@
                         if (lg != null) { //they are logged in
                             String url_username = (String)request.getAttribute("uname"); //get their username
                             if (lg.getloggedin()) { 
-                                response.sendRedirect(request.getContextPath() + "/Images/" + url_username);//go to user's profile DOESNT LOAD IMAGES
+                                response.sendRedirect(request.getContextPath() + "/Images/" + url_username);//go to user's profile
                             } 
                         }else{ %>
                             <li><a href="/Instagrim/Register">Register</a></li> <%-- link to register page --%>

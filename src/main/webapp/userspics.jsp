@@ -14,14 +14,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn"); 
-        String UserName = lg.getUsername(); //get their username %>
-        <title><%=UserName%>'s Profile</title>
+        String UserName = lg.getUsername(); //get their username 
+        String upper_name = UserName.substring(0, 1).toUpperCase() + UserName.substring(1); //capitalises first letter %>
+        <title><%=upper_name%>'s Profile</title>
         <link rel="stylesheet" type="text/css" href="/Instagrim/Styles.css" />
     </head>
     <body>
         <header>
         
-        <h1><%=UserName%>'s Profile</h1> <%-- displays user's name, pretty cool huh? --%>
+        <h1><%=upper_name%>'s Profile</h1> <%-- displays user's name, pretty cool huh? --%>
         </header>
         
         <nav>
@@ -53,10 +54,5 @@
             </table>
             <%} //else%>
         </article>
-        <footer>
-            <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
-            </ul>
-        </footer>
     </body>
 </html>

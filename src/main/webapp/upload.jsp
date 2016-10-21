@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uk.ac.dundee.computing.kym.instagrim.stores.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,7 +28,9 @@
         </article>
         <footer>
             <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
+                <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn"); 
+                String UserName = lg.getUsername(); //get their username %>
+        <li><a href="/Instagrim/Images/<%=UserName%>">Back</a></li> <%-- user's profile page --%>
             </ul>
         </footer>
     </body>
