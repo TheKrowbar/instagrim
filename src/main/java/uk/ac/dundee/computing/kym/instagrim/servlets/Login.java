@@ -70,7 +70,7 @@ public class Login extends HttpServlet {
             LoggedIn lgpath = (LoggedIn) session.getAttribute("LoggedIn");
             String url_username = lgpath.getUsername();
             
-            RequestDispatcher rd=request.getRequestDispatcher("index.jsp"); //send user to profile after login (NOT YET)
+            RequestDispatcher rd=request.getRequestDispatcher("index.jsp"); //send user to profile after login
             request.setAttribute("uname", url_username); //for sending user to profile after login
 	    rd.forward(request,response);
             
