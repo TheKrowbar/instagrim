@@ -22,8 +22,11 @@
             <form method="POST"  action="Register">
                 <ul>
                     <%-- enter new username and password --%>
-                    <li>User Name <input type="text" name="username" required minlength = 2></li> <%-- "required" so user can't just hit register without filling in --%>
-                    <li>Password <input type="password" name="password" required minlength = 4></li>
+                    <li>User Name  <input type="text" name="username" required minlength = 2></li> <%-- "required" so user can't just hit register without filling in --%>
+                    <li>Password   <input type="password" name="password" required minlength = 4></li>
+                    <li>First Name <input type="text" name="first_name"></li>
+                    <li>Last Name  <input type="text" name="last_name"></li>
+                    <li>Email      <input type="text" name="email"></li>
                 </ul>
                 <br/>
                 <input type="submit" value="Register">

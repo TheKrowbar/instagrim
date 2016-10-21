@@ -14,8 +14,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn"); 
+        
         String UserName = lg.getUsername(); //get their username 
-        String upper_name = UserName.substring(0, 1).toUpperCase() + UserName.substring(1); //capitalises first letter %>
+        String f_name = lg.getfirstName();
+        String l_name = lg.getlastName();
+        String email = lg.getEmail();
+        
+        String upper_name = UserName.substring(0, 1).toUpperCase() + UserName.substring(1); //capitalises first letter of uname %>
         <title><%=upper_name%>'s Profile</title>
         <link rel="stylesheet" type="text/css" href="/Instagrim/Styles.css" />
     </head>
@@ -24,6 +29,12 @@
         
         <h1><%=upper_name%>'s Profile</h1> <%-- displays user's name, pretty cool huh? --%>
         </header>
+        
+        <article>
+            <h2>First Name: <%=f_name%></h2>
+            <h3>Last Name: <%=l_name%></h3>
+            <h4>Email: <%=email%></h4>
+        </article>
         
         <nav>
             <ul>
