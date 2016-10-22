@@ -31,9 +31,9 @@
         </header>
         
         <article>
-            <h2>First Name: <%=f_name%></h2>
+           <%-- <h2>First Name: <%=f_name%></h2>
             <h3>Last Name: <%=l_name%></h3>
-            <h4>Email: <%=email%></h4>
+            <h4>Email: <%=email%></h4> commented out because showing null--%>
         </article>
         
         <nav>

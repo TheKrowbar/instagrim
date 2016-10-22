@@ -52,6 +52,10 @@ public class Login extends HttpServlet {
         username = username.toLowerCase();
         String password=request.getParameter("password");
         
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        
         User us=new User();
         us.setCluster(cluster);
         boolean isValid=us.IsValidUser(username, password);
@@ -62,7 +66,9 @@ public class Login extends HttpServlet {
             LoggedIn lg= new LoggedIn();
             lg.setLoggedin();
             lg.setUsername(username);
-            //request.setAttribute("LoggedIn", lg);
+            lg.setfirstName(firstName);
+            lg.setlastName(lastName);
+            lg.setEmail(email);
             
             session.setAttribute("LoggedIn", lg);
             System.out.println("Session in servlet "+session);
@@ -72,6 +78,7 @@ public class Login extends HttpServlet {
             
             RequestDispatcher rd=request.getRequestDispatcher("index.jsp"); //send user to profile after login
             request.setAttribute("uname", url_username); //for sending user to profile after login
+
 	    rd.forward(request,response);
             
         }else{
