@@ -62,8 +62,8 @@ public class Login extends HttpServlet {
         HttpSession session=request.getSession();
         System.out.println("Session in servlet "+session);
         
-        if (isValid){
-            LoggedIn lg= new LoggedIn();
+        if (isValid){ //user is registered
+            LoggedIn lg= new LoggedIn(); //login and set details
             lg.setLoggedin();
             lg.setUsername(username);
             lg.setfirstName(firstName);

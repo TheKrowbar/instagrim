@@ -94,6 +94,7 @@ public class Image extends HttpServlet {
         }
     }
 
+    //displays all images a user has uploaded
     private void DisplayImageList(String User, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PicModel tm = new PicModel();
         tm.setCluster(cluster);
@@ -104,6 +105,7 @@ public class Image extends HttpServlet {
 
     }
 
+    //displays single image
     private void DisplayImage(int type,String Image, HttpServletResponse response) throws ServletException, IOException {
         PicModel tm = new PicModel();
         tm.setCluster(cluster);

@@ -60,6 +60,7 @@ public class Register extends HttpServlet {
 
         /*
         //The following logs in the new user that has just been registered
+        //This has been commented as it messes with sending user to profile after login
         if(us.RegisterUser(username, password)){ //if user has been registered
             //log user in immediately after registering
             LoggedIn lg= new LoggedIn();

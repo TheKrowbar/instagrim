@@ -14,10 +14,13 @@
         <title>Logout</title>
     </head>
     <header>
-            <h1>InstaGrim</h1>
+            <h1>Instagrim</h1>
             <h2>Your world in Black and White</h2>
         </header>
     <body>
+        <article>
+            <h3>Are you sure you want to log out?</h3>
+        </article>
         <nav>
         <% LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn"); 
         String UserName = lg.getUsername(); //get their username %>

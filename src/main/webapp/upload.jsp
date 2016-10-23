@@ -10,20 +10,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Instagrim</title>
+        <title>Instagrim Upload</title>
         <link rel="stylesheet" type="text/css" href="Styles.css" />
     </head>
     <body>
-        <h1>InstaGrim! </h1>
+        <h1>Instagrim </h1>
         <h2>Your world in Black and White</h2>
  
         <article>
             <h3>File Upload</h3>
             <form method="POST" enctype="multipart/form-data" action="Image">
-                File to upload: <input type="file" name="upfile"><br/>
+                File to upload: <input type="file" name="upfile"><br/> <%--uploads file--%>
                 <br/>
                 <input type="submit" value="Press"> to upload the file!
-            </form>
+            </form> 
 
         </article>
         <footer>

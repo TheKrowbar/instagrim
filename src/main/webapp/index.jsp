@@ -10,14 +10,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Instagrim</title>
+        <title>Instagrim Home</title>
         <link rel="stylesheet" type="text/css" href="Styles.css" /> <%-- links to css --%>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     
     <body> <%-- main content --%>
         <header>
-            <h1>InstaGrim</h1>
+            <h1>Instagrim</h1>
             <h2>Your world in Black and White</h2>
         </header>
         

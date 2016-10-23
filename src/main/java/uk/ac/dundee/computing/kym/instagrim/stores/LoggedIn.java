@@ -11,7 +11,7 @@ package uk.ac.dundee.computing.kym.instagrim.stores;
  * @author Administrator
  */
 public class LoggedIn {
-    private boolean loggedin=false;
+    private boolean loggedin=false; //set vars to null
     private String Username=null;
     private String firstName=null;
     private String lastName=null;

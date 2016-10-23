@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login to Instagrim!</title>
+        <title>Instagrim Login</title>
         <link rel="stylesheet" type="text/css" href="Styles.css" />
 
     </head>
@@ -19,10 +19,10 @@
         </header>
        
         <article>
-            <h3>Login</h3>
+            <h3>Login to Instagrim!</h3>
             <form method="POST"  action="Login">
                 <ul>
-                    <li>User Name <input type="text" name="username" required minlength = 2></li>
+                    <li>User Name <input type="text" name="username" required minlength = 2></li> <%--has to be filled in, has to be 2 chars or more--%>
                     <li>Password <input type="password" name="password" required minlength = 4 ></li>
                 </ul>
                 <br/>

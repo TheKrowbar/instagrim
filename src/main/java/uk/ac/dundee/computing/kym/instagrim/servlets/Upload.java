@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Upload extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd=request.getRequestDispatcher("upload.jsp");
+        RequestDispatcher rd=request.getRequestDispatcher("upload.jsp"); //for REST
          rd.forward(request,response);
     }
 }
